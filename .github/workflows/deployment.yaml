@@ -1,4 +1,4 @@
-name: Build and deploy JAR app to Azure Web App - tkg-tk-dev-apps-mdm
+name: Build and deploy JAR app to Azure Web App - tkg-tk-dev-apps-gscm
 
 on:
   push:
