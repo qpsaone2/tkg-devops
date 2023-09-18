@@ -16,10 +16,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '17'
-
-      - name: Build with Maven
-        run: mvn clean install
-
+          
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
@@ -31,6 +28,11 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
           # path: '$/demo/build/libs/*SNAPSHOT.jar'
+          
+      - name: Build with Maven
+        run: mvn clean install
+
+
           
   deploy:
     runs-on: [self-hosted, Windows, x64]
