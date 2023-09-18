@@ -22,6 +22,11 @@ jobs:
         with:
           maven-version: 3.9.4
 
+      - name: Build with Maven
+        run:
+          cd C:\actions-runner\_work\tkg-devops\tkg-devops\demo
+          mvn clean install    
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -29,10 +34,6 @@ jobs:
           path: '${{ github.workspace }}/target/*.jar'
           # path: '$/demo/build/libs/*SNAPSHOT.jar'
           
-      - name: Build with Maven
-        run:
-          cd C:\actions-runner\_work\tkg-devops\tkg-devops\demo
-          mvn clean install
 
           
   deploy:
