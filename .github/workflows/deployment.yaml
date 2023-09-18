@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/demo/target/*.jar'
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: [self-hosted, Windows, x64]
@@ -46,5 +46,5 @@ jobs:
         with:
           app-name: 'tkg-tk-dev-apps-gscm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0954631B57C0406BA0EBE3B4678985CA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_405EA392EA434D8B8C52A113C8360E26 }}
           package: 'demo-0.0.1-SNAPSHOT.jar'
